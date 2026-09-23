@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #fffaf0;
+  color: #333;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #6a040f;
+  color: #fff;
+}
+
+/* ===== Fluid typography section ===== */
+.type-demo {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.type-demo h1 {
+  /* Scales between 1.5rem and 3rem depending on viewport width */
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.type-demo p {
+  /* Scales between 1rem and 1.5rem depending on viewport width */
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+}
+
+/* ===== Below 700px: adjust spacing/line-height for readability ===== */
+@media (max-width: 700px) {
+  .type-demo {
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .type-demo p {
+    line-height: 1.8;
+  }
+}

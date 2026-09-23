@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* ===== Side-by-side comparison: Flexbox ===== */
+.compare-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.compare-item {
+  flex: 1;
+  max-width: 450px;
+  text-align: center;
+}
+
+.compare-item img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.filtered img {
+  filter: brightness(1.4) contrast(1.3);
+  transition: filter 0.5s ease; /* smooth fade of filter */
+}
+
+.filtered:hover img {
+  filter: none;
+}
+
+.compare-item figcaption {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* ===== Below 700px: stack vertically ===== */
+@media (max-width: 700px) {
+  .compare-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}

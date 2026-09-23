@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #14213d;
+  color: #fca311;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* ===== Grid layout: 2-3 columns on large screens ===== */
+.cheat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cheat-box {
+  background: #fff;
+  border: 2px solid #14213d;
+  border-radius: 6px;
+  padding: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cheat-box:hover {
+  background-color: #fca311;
+  transform: translateY(-4px);
+}
+
+.cheat-box h2 {
+  margin-bottom: 0.6rem;
+}
+
+/* ===== Below 700px: stacked key/value rows ===== */
+@media (max-width: 700px) {
+  .cheat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cheat-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cheat-box h2 {
+    /* heading acts as the "key" above its "value" text */
+    border-bottom: 1px solid #14213d;
+    padding-bottom: 0.4rem;
+  }
+}

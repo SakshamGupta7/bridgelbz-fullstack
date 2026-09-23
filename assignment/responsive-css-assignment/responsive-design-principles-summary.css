@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #212529;
+  color: #fff;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* ===== Grid layout for three boxes ===== */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.principle-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.principle-box pre {
+  background: #eee;
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Gradient + text color change on hover */
+.principle-box:hover {
+  background: linear-gradient(135deg, #4361ee, #7209b7);
+  color: #fff;
+}
+
+.principle-box:hover pre {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ===== Below 600px: single column ===== */
+@media (max-width: 600px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}

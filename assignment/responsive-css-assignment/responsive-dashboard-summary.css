@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f3f5;
+  color: #222;
+}
+
+/* ===== Dashboard grid: Header / Sidebar / Main ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  min-height: 100vh;
+}
+
+.dash-header {
+  grid-area: header;
+  background-color: #073b4c;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.dash-sidebar {
+  grid-area: sidebar;
+  background-color: #118ab2;
+  padding: 1.5rem;
+}
+
+.dash-sidebar nav ul {
+  list-style: none;
+}
+
+.dash-sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0.6rem 0;
+}
+
+.dash-sidebar nav a:hover {
+  text-decoration: underline;
+}
+
+.dash-main {
+  grid-area: main;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  align-content: start;
+}
+
+.dash-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: loadIn 0.6s ease-in; /* simple load animation */
+}
+
+.dash-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Load animation ===== */
+@keyframes loadIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Below 750px: sidebar shifts to top, stacked layout ===== */
+@media (max-width: 750px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+  }
+
+  .dash-sidebar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

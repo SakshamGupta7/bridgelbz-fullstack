@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q7: Combined Responsive Web Demo</title>
+<link rel="stylesheet" href="combined-responsive-web-demo.css">
+</head>
+<body>
+  <!-- Header/nav: Flexbox -->
+  <header class="site-header">
+    <div class="logo">DemoSite</div>
+    <nav>
+      <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cheatsheet">Cheat Sheet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content: Grid with 3 sections -->
+  <main class="main-grid">
+    <section id="gallery" class="panel gallery-panel">
+      <h2>Image Gallery</h2>
+      <div class="mini-gallery">
+        <img src="https://picsum.photos/id/1015/150/150" alt="Sample 1">
+        <img src="https://picsum.photos/id/1016/150/150" alt="Sample 2">
+        <img src="https://picsum.photos/id/1018/150/150" alt="Sample 3">
+      </div>
+    </section>
+
+    <section id="about" class="panel text-panel">
+      <h2>About Responsive Design</h2>
+      <p>Responsive design lets a webpage adapt its layout, images, and
+      typography to fit any screen size using Flexbox, Grid, media
+      queries, and relative units.</p>
+    </section>
+
+    <section id="cheatsheet" class="panel cheat-panel">
+      <h2>Cheat Sheet Preview</h2>
+      <ul>
+        <li>Filters</li>
+        <li>Media Queries</li>
+        <li>Typography</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Contact: hello@demosite.com | +1 555-0100</p>
+  </footer>
+</body>
+</html>
